@@ -14,9 +14,8 @@ class App extends React.Component {
     fetch(URL)
     .then(r => r.json())
     .then(astroObj => {
-      this.setState({
-        astronauts: astroObj
-      });
+      console.log(astroObj.people);
+      this.setState({astronauts: astroObj.people.map(astro => astro.name + '\n')})
     })
   }
 
